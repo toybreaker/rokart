@@ -1,0 +1,28 @@
+.card {
+  background-color: white;
+  // padding-bottom: $vertical_rhythm--small;
+  -webkit-box-shadow: $card-shadow;
+  box-shadow: $card-shadow;
+  -webkit-transition: $transition_shadow;
+  transition: $transition_shadow;
+
+  &:hover,
+  &:focus {
+    -webkit-box-shadow: $card-shadow--hover;
+    box-shadow: $card-shadow--hover;
+    cursor: pointer;
+  }
+
+
+  &.is_big {
+    max-width: 100%;
+    -webkit-box-shadow: $card-shadow--hover;
+    box-shadow: $card-shadow--hover;
+  }
+}
+
+.pad {
+  min-width: 100%;
+  min-height: 110px;
+  &.hide{ display: none;}
+}

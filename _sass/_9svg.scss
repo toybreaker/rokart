@@ -1,0 +1,17 @@
+.svg_color {
+  fill: $grey--darker;
+  #icn--junglestar & {
+    fill: black;
+  }
+}
+
+a:hover svg.svg_color {
+  //not working
+  fill: $link_color!important;
+}
+
+.is_spa svg.up {
+  padding: 5px 15px;
+  width: 60px;
+  height: 60px;
+}

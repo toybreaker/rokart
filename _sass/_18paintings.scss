@@ -1,0 +1,121 @@
+.painting_link_box {
+  padding-top: $vertical_rhythm;
+}
+
+
+.painting_link {
+  display: block;
+  margin-bottom: $vertical_rhythm;
+  color: $grey--dark;
+}
+
+.painting_title {
+    padding-top: $vertical_rhythm--small;
+}
+
+.painting_grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+
+  @include media("screen", ">minWidth") {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  &.bigger {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  > div {
+    padding: .5rem;
+    border-radius: $border_radius;
+    border: 1px $grey solid;
+  }
+
+  .painting_link {
+    margin-bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100%;
+
+  }
+}
+
+.painting_data  {
+  padding-top: $vertical_rhythm--small;
+  padding-bottom:0;
+  line-height: 1.1;
+
+  @include media("screen", ">minWidth") {
+    display: table-row;
+  }
+
+  @include media("screen", ">minWidth") {
+
+    .painting_data--content,
+    .painting_data--name {
+      display: table-cell!important;
+      padding-top: $vertical_rhythm--small;
+      padding-right: $vertical_rhythm!important;
+    }
+  }
+
+  .painting_data--content {
+    font-weight: $font_weight--light;
+    font-size: 16px;
+    //text-align: center;
+    display: block;
+  }
+
+  .painting_data--name {
+    font-style: italic;
+    font-size: 14px;
+    font-weight: $font_weight--min;
+    padding-right: $vertical_rhythm--small/3;
+  }
+}
+
+.tag_page,
+.serie {
+  .painting_data--content {
+    font-size: 14px;
+  }
+  .painting_dimensions {
+    font-size: 13px;
+    padding-top: $vertical_rhythm--small/4;
+    .painting_data--content {
+      font-weight: $font_weight--min!important;
+    }
+  }
+}
+
+
+.painting_serie a {
+  font-weight: $font_weight--light!important;
+}
+
+
+.painting_thumb {
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+
+
+  .painting_thumb_image {
+    height: 160%;
+    width: auto;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  }
+
+}

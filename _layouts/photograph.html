@@ -1,0 +1,82 @@
+---
+
+---
+<!DOCTYPE html>
+<html lang="{% if page.lang %}{{page.lang}}{% else %}{{site.lang}}{% endif %}" prefix="og: http://ogp.me/ns#">
+
+  {% include head.html %}
+
+  <body class="painting {{page.imagecode}}">
+
+    {% include svg/defs.html %}
+
+    {% include header.html %}
+
+    <div class="bungkus group" role="main">
+
+      <div class="container">
+
+        <div class="painting_image_box">
+
+          {% comment %}
+          assign the page image and split at the extension dot
+          {% endcomment %}
+
+          {% assign f = page.image | split: '.' %}
+
+          <img class="painting_image" src="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }}"
+               srcset="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }} 640w,
+                       {{ f[0] | relative_url }}{{ include.name }}-880.{{ f[1] }} 880w,
+                       {{ f[0] | relative_url }}{{ include.name }}-1024.{{ f[1] }} 1024w,
+                       {{ f[0] | relative_url }}{{ include.name }}-1920.{{ f[1] }} 1920w"
+               sizes="100vw" alt="{{ page.name }} - {{ page.subtitle }}" />
+
+        </div>
+
+        <div class="painting_data painting_title">
+          <span class="painting_data--name">Title</span>
+          <span class="painting_data--content">{{ page.title }}</span>
+         </div>
+
+        <div class="painting_data painting_year">
+          <span class="painting_data--name">Year</span>
+          <span class="painting_data--content">{{ page.year }}</span>
+        </div>
+
+        {% if page.serie %}
+        <div class="painting_data painting_serie">
+          <span class="painting_data--name">Series</span>
+          <span class="painting_data--content">
+            <a href="/{{ page.serie | slugify }}/">{{ page.serie }}</a>
+          </span>
+        </div>
+        {% endif %}
+
+        <div class="painting_data tags">
+          <span class="painting_data--name">Tags</span>
+          <span class="painting_data--content">
+            {% for tag in page.tags %}
+            <a class="nowrap" href="/{{ tag }}/">{{ tag }}</a>
+          {% endfor %}
+          </span>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    {% include tag_cloud.html %}
+
+    {% include footer.html %}
+
+    {% include script_ext_link.html %}
+
+    {% include script_append_to_copy_action.html %}
+
+    {% include script_google_analytics.html %}
+
+
+  </body>
+
+</html>

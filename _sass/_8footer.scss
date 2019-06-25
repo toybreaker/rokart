@@ -1,0 +1,138 @@
+.footer {
+  color: $grey--darkest;
+  display: block;
+  padding: 0 0 $vertical_rhythm 0;
+  width: 100%;
+  background-color: $brand_color;
+  border-top: darken($bg_color, 20) 1px solid;
+
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    @include media( "screen", ">minWidth") {
+      width: 100%;
+      margin: 0;
+    }
+    @include media( "screen", ">bp1Width") {
+      max-width: 80%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    @include media( "screen", ">maxWidth") {
+      max-width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+  }
+
+  .logo {
+    margin: 0;
+    width: 100px;
+    height: 100px;
+    margin-bottom: $vertical_rhythm;
+  }
+
+  .title {
+    margin-top: $vertical_rhythm--small ;
+    padding-top: $vertical_rhythm;
+    margin-bottom: $vertical_rhythm/6;
+    width: 100%;
+    @include media( "screen", ">minWidth") {
+      width: auto;
+    }
+  }
+
+  svg {
+    width: $icon_size;
+    height: $icon_size;
+    margin-right: 10px;
+
+    &.qr {
+      width: 100px;
+      height: 100px;
+      margin-top: $vertical_rhythm;
+      margin-right: 0;
+      margin-left: -5px;
+    }
+  }
+}
+
+.menu_footer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  @include media( "screen", ">minWidth") {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .menu_item {
+    min-height: 42px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    &.active {
+      border: $grey--dark solid 1px;
+      padding-left: $vertical_rhythm--small;
+      padding-right: $vertical_rhythm--small;
+    }
+  }
+
+  .email a span,
+  .other_website a span {
+    text-transform: none;
+  }
+}
+
+.menu_contacts,
+.menu_products,
+.menu_socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin-right: $vertical_rhythm;
+
+}
+
+.menu_contacts .name {
+  color: black;
+}
+
+.footer_company_name {
+  text-transform: uppercase;
+  font-weight: $font_weight--light;
+  font-size: 1.5rem;
+  margin-top: $vertical_rhythm;
+  margin-bottom: $vertical_rhythm;
+  text-align: left;
+}
+
+.copyright {
+  font-size: 10px;
+  padding-top: $vertical_rhythm;
+  margin-top: $vertical_rhythm;
+  color: $grey--dark;
+}

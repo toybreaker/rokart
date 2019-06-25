@@ -1,0 +1,26 @@
+{% include ascii_art_junglestar_banner.html %}
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ site.title }} | {{ page.title }}{% if post.layout == post_index_tag %} {{ page.tag }} {% endif %}</title>
+
+  <meta name="description" content="{{ site.description  | truncate: 350 }}">
+
+  <meta name="keywords" content="{{ site.keywords }}">
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+
+  {% if site.google.verification %}
+  <meta name="google-site-verification" content="{{ site.google.verification }}" />
+  {% endif %}
+
+  <meta name="version" content="{{ site.version }}">
+
+  {% include favicons.html %}
+
+  {% seo title=false %}
+
+</head>

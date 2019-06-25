@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<h2 class="center">{{ page.tag | upcase}}</h2>
+
+<div class="painting_grid">
+  {% for post in page.posts %}
+    {% unless post.publish %}
+    <div class="painting_block">
+      <a class="painting_link" href="{{ post.url }}" title="view: {{ post.title }}" >
+
+        {% comment %}
+        assign the page image and split at the extension dot
+        {% endcomment %}
+
+        {% assign f = post.image | split: '.' %}
+
+        <div class="painting_thumb">
+          <img class="painting_thumb_image" src="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }}"
+               srcset="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }} 640w,
+                       {{ f[0] | relative_url }}{{ include.name }}-880.{{ f[1] }} 880w,
+                       {{ f[0] | relative_url }}{{ include.name }}-1024.{{ f[1] }} 1024w,
+                       {{ f[0] | relative_url }}{{ include.name }}-1920.{{ f[1] }} 1920w"
+               sizes="50vw" alt="{{ post.title }}, {{ post.medium }}">
+        </div>
+
+        <div class="painting_data">
+          <div class=" painting_title">
+            <span class="painting_data--content">{{ post.title }}</span>
+           </div>
+        </div>
+
+      </a>
+    </div>
+    {% endunless %}
+  {% endfor %}
+</div>

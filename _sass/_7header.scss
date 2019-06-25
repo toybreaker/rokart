@@ -1,0 +1,127 @@
+.header {
+  background-color: $brand_color;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: $vertical_rhythm/4 $vertical_rhythm/2;
+  @include media("screen", ">minWidth") {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    //padding-bottom: 0;
+  }
+  @include media("screen", ">bp1Width") {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding-top: $vertical_rhythm/2;
+    padding-bottom: $vertical_rhythm/2;
+  }
+
+  .tag_page &,
+  .serie & {
+    border-bottom: solid 1px $grey;
+  }
+  //when site has a short menu
+  .short_menu & {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    .logo_block {
+      padding-bottom: 0;
+    }
+  }
+
+  .logo_block {
+    //a
+    color: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin-bottom: 0;
+    // no underline here
+    border-bottom: 0 none;
+
+    &:hover {
+      border-bottom: 0 none;
+    }
+  }
+
+  .logo {
+    //svg
+    height: 70px;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    @include media("screen", ">bp1Width") {
+      margin-right: $vertical_rhythm;
+    }
+  }
+}
+
+.menu_header {
+  .menu_item {
+    //a
+    font-size: 1.1rem;
+    margin-right: $vertical_rhythm--small/2;
+    margin-left: $vertical_rhythm--small/2;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    @include media("screen", ">minWidth") {
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+    }
+
+    &.active {
+      .long_menu & {
+        background-color: $grey--light;
+      }
+    }
+
+    span {
+      text-align: center;
+      @include media("screen", ">minWidth") {
+        text-align: left;
+      }
+    }
+  }
+}
+
+.site_title {
+  @include responsive-font($header_responsive, $header_min, $header_max);
+  line-height: 1.2;
+  font-weight: $font_weight--min;
+  text-align: center;
+}

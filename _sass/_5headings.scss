@@ -1,0 +1,51 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: $font_weight--min;
+  .content & {
+    margin-top: $vertical_rhythm;
+    margin-bottom: $vertical_rhythm;
+  }
+  .boat_summary & {
+    margin-top: $vertical_rhythm/4;
+  }
+}
+
+
+h1 {
+  @include responsive-font($heading1_responsive, $heading1_min, $heading1_max);
+  line-height: 1.2;
+  color: $grey--dark;
+}
+
+h2 {
+  @include responsive-font($heading2_responsive, $heading2_min, $heading2_max);
+  line-height: 1.2;
+  color: $grey--dark;
+}
+h3 {
+  @include responsive-font($heading3_responsive, $heading3_min, $heading3_max);
+  line-height: 1.2;
+  color: $grey--dark;
+}
+
+h4 {
+  @include responsive-font($heading4_responsive, $heading4_min, $heading4_max);
+  line-height: 1.1;
+  color: $grey--dark;
+}
+
+h5 {
+  @include responsive-font($heading5_responsive, $heading5_min, $heading5_max);
+  line-height: 1;
+}
+
+h6 {
+  @include responsive-font($heading6_responsive, $heading6_min, $heading6_max);
+  line-height: 1;
+}

@@ -1,0 +1,73 @@
+.responsive_table_block {
+  width: 100%;
+  margin: 0 0 $vertical_rhythm 0;
+  padding: 0;
+  border: 0;
+  border-spacing: 0;
+  border-collapse: separate;
+
+  tbody {
+    @include media("screen", ">minWidth") {
+      margin-top: 0;
+    }
+    &:nth-child(odd) {//tr
+      background-color: transparentize($black, .95);
+    }
+  }
+
+  thead td {
+    font-weight: $font_weight--strong;
+    display: none;
+    margin-top: $vertical_rhythm--small;
+    @include media("screen", ">minWidth") {
+      display: table-cell;
+    }
+  }
+
+  td {
+    display: block;
+    padding: 10px 10px;
+    @include media("screen", ">minWidth") {
+      display: table-cell;
+    }
+
+    &:before {
+      content: attr(data-th) "";
+      display: inline-block;
+      font-weight: $font_weight--reg;
+      font-size: 65%; // this refers to the already responsive size of parent! (maybe)
+      padding-top: $vertical_rhythm--small/2;
+      width: 18%;
+      @include media("screen", ">minWidth") {
+        display: none;
+      }
+    }
+
+    // &:first-child {
+    //   margin-top: 10px;
+    //   margin-bottom: 5px;
+    //   padding-bottom: 5px;
+    //   @include media("screen", ">minWidth") {
+    //     margin-top: 0;
+    //     margin-bottom: 0;
+    //     padding-top: 0;
+    //     padding-bottom: 0;
+    //   }
+    // }
+
+    // &.website_link {
+    //   padding-bottom: 10px;
+    //   text-align: left;
+    //   @include media("screen", ">minWidth") {
+    //     padding-right: 0;
+    //     padding-bottom: 0;
+    //     text-align: right;
+    //   }
+    // }
+  }
+
+
+
+
+
+}

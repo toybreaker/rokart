@@ -1,0 +1,210 @@
+<footer class="footer group" role="contentinfo">
+
+  <div class="container">
+
+
+    <div class="menu menu_footer">
+
+      <div class="menu_products series" role="menu">
+
+        <h3 class="title uppercase bottom_padded--med">Series Titles</h3>
+
+        {% for item in site.series %}
+
+          {% if page.url contains item.url %}
+            {% unless item.publish == "notyet" %}
+            <a class="menu_item active" role="menuitem" title="{{ item.title }}" href="/{{ item.title | slugify }}">
+              <span class="">{{ item.title }}</span>
+            </a>
+            {% endunless %}
+          {% else %}
+            {% unless item.publish == "notyet" %}
+            <a class="menu_item " role="menuitem" title="{{ item.title }}" href="/{{ item.title | slugify }}">
+              <span class="page_title">{{ item.title }}</span>
+            </a>
+            {% endunless %}
+          {% endif %}
+
+        {% endfor %}
+
+
+        <h3 class="title uppercase bottom_padded--med">Artworks</h3>
+
+        {% for item in site.pages %}
+
+          {% if page.url contains item.url %}
+            {% unless item.publish == "notyet" %}
+            <a class="menu_item active" role="menuitem" title="{{ item.title }}" href="/{{ item.title | slugify }}">
+              <span class="">{{ item.title }}</span>
+            </a>
+            {% endunless %}
+          {% else %}
+            {% unless item.publish == "notyet" %}
+            <a class="menu_item " role="menuitem" title="{{ item.title }}" href="/{{ item.title | slugify }}">
+              <span class="page_title">{{ item.title }}</span>
+            </a>
+            {% endunless %}
+          {% endif %}
+
+        {% endfor %}
+
+
+        <h3 class="title uppercase bottom_padded--med">About</h3>
+
+        {% for item in site.about %}
+
+          {% if page.url contains item.url %}
+            {% unless item.publish == "notyet" %}
+            <a class="menu_item active" role="menuitem" title="{{ item.title }}" href="/{{ item.title | slugify }}">
+              <span class="">{{ item.title }}</span>
+            </a>
+            {% endunless %}
+          {% else %}
+            {% unless item.publish == "notyet" %}
+            <a class="menu_item " role="menuitem" title="{{ item.title }}" href="/{{ item.title | slugify }}">
+              <span class="page_title">{{ item.title }}</span>
+            </a>
+            {% endunless %}
+          {% endif %}
+
+        {% endfor %}
+
+      </div>
+
+
+
+
+      <div class="menu_contacts" role="menu">
+
+        <h3 class="title uppercase bottom_padded--med">{{site.title}}</h3>
+
+        {% if site.company.address %}
+        <div class="footer_icon address">
+          <a class="menu_item" role="menuitem" href="{% if site.company.maplink %}{{site.company.maplink}}{% else %}#{% endif %}" title="location">
+
+            <span class="address_icon">
+            {% include svg/use.html id="icn--location" class="location" %}
+            </span>
+
+            <div class="address_text" itemscope itemtype="http://schema.org/Organization">
+
+              {% if site.company.legal_name %}
+                <div class="name" itemprop="name">{{site.company.legal_name}}</div>
+              {% else %}
+                <div class="name" itemprop="name">{{site.company.name}}</div>
+              {% endif %}
+              <span class="no_break" itemscope itemtype="http://schema.org/PostalAddress">
+
+                <span class="white_space_wrap" itemprop="streetAddress">{{site.company.address}}{% if site.company.country %},&nbsp;{% endif %}</span>
+                <span itemprop="addressLocality">{{site.company.country}}</span>
+
+              </span>
+            </div>
+          </a>
+        </div>
+        {% endif %}
+
+        {% if site.company.telephone %}
+        <div class="footer_icon telephone">
+          <a class="menu_item" role="menuitem" href="tel:{{site.company.telephone}}" title="telephone">
+            <span>{% include svg/use.html id="icn--localphone" class="localphone" %}</span>
+            <span>{{site.company.telephone}}</span>
+          </a>
+        </div>
+        {% endif %}
+
+        {% if site.company.telephone_whatsapp %}
+        <div class="footer_icon telephone">
+          <a class="menu_item" role="menuitem" href="https://wa.me/{{site.company.telephone_whatsapp | remove:'+' | remove:' ' }}?text=I%20want%20more%20information...%20Please%20contact%20me" title="Send a WhatsApp message">
+            <span>{% include svg/use.html id="icn--whatsapp" class="whatsapp" %}</span>
+            <span><span class="hide_on_phones">Contact {{site.short_title}} via&nbsp;</span>WhatsApp</span>
+          </a>
+        </div>
+        {% endif %}
+
+
+        {% if site.company.fax %}
+        <div class="footer_icon fax" itemprop="fax">
+          <a class="menu_item" role="menuitem" href="#" title="fax">
+            <span>{% include svg/use.html id="icn--fax" class="fax" %}</span>
+            <span>{{site.company.fax}}</span>
+          </a>
+        </div>
+        {% endif %}
+
+        {% if site.company.facebook_page %}
+        <div class="footer_icon facebook">
+          <a class="menu_item" role="menuitem" href="{{site.company.facebook_page}}" title="{{site.company.facebook_page}} Facebook page">
+            <span>
+              {% include svg/use.html id="icn--facebook" class="facebook" %}
+            </span>
+            <span><span class="hide_on_phones">Follow {{site.short_title}} on&nbsp;</span>Facebook</span>
+          </a>
+        </div>
+        {% endif %}
+
+        {% if site.company.instagram %}
+        <div class="footer_icon instagram">
+          <a class="menu_item" role="menuitem" href="{{site.company.instagram}}" title="{{site.company.instagram}} on Instagram">
+            <span>
+              {% include svg/use.html id="icn--instagram" class="instagram" %}
+            </span>
+            <span><span class="hide_on_phones">Follow {{site.short_title}} on&nbsp;</span>Instagram</span>
+          </a>
+        </div>
+        {% endif %}
+
+        {% if site.company.youtube %}
+        <div class="footer_icon youtube">
+          <a class="menu_item" role="menuitem" href="{{site.company.youtube}}" title="{{site.company.youtube}} on Youtube">
+            <span>
+              {% include svg/use.html id="icn--youtube" class="youtube" %}
+            </span>
+            <span><span class="hide_on_phones">Subscribe to {{site.short_title}}&nbsp;</span>YouTube <span class="hide_on_phones">&nbsp;channel</span></span>
+          </a>
+        </div>
+        {% endif %}
+
+        {% if site.company.vimeo %}
+        <div class="footer_icon vimeo">
+          <a class="menu_item" role="menuitem" href="{{site.company.vimeo}}" title="{{site.company.vimeo}} on Vimeo">
+            <span>
+              {% include svg/use.html id="icn--vimeo" class="vimeo" %}
+            </span>
+            <span><span class="hide_on_phones">Follow {{site.short_title}} on&nbsp;</span>Vimeo</span>
+          </a>
+        </div>
+        {% endif %}
+
+        {% if site.company.email %}
+        <div class="footer_icon email">
+          <a class="menu_item" role="menuitem" class="" href="mailto:{{site.company.email}}" title="{{site.company.email}}">
+            <span>
+              {% include svg/use.html id="icn--email" class="email" %}
+            </span>
+            <span itemprop="email">
+              <span class="show_on_phones">Email</span>
+              <span class="hide_on_phones">{{site.company.email}}</span></span>
+          </a>
+        </div>
+        {% endif %}
+
+        {% if site.qr == "show" %}
+        <div class="menu_item footer_icon email" role="menuitem">
+          <span>
+            {% include svg/use.html id="icn--qr" class="qr" %}
+          </span>
+        </div>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+    <div class="copyright">Copyright © {{ "now" | date: "%Y" }} {% if site.company.legal_name %}{{site.company.legal_name}}{% else %}{{site.short_title}}{% endif %}. All rights reserved. <br class="show_on_phones"> Powered by <a href="https://junglestar.org">Junglestar</a></div>
+
+  </div>
+
+</footer>
+
+{% include script_google_analytics.html %}

@@ -1,0 +1,32 @@
+{
+  "name": "rokart",
+  "version": "0.1.0",
+  "description": "rokma art photography image processor",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toybreaker/rokart.git"
+  },
+  "keywords": [
+    "frontend",
+    "utility",
+    "responsive",
+    "gulp"
+  ],
+  "author": "toybreaker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toybreaker/rokart/issues"
+  },
+  "homepage": "https://github.com/toybreaker/rokart#readme",
+  "devDependencies": {
+    "change-case": "^3.0.2",
+    "gulp": "^4.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-responsive": "^2.11.0"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,72 @@
+---
+
+---
+<!DOCTYPE html>
+<html lang="{% if page.lang %}{{page.lang}}{% else %}{{site.lang}}{% endif %}" prefix="og: http://ogp.me/ns#">
+
+  {% include head.html %}
+
+  <body class="{{page.title}} serie">
+
+    {% include svg/defs.html %}
+
+    {% include header.html %}
+
+    <div class="bungkus group" role="main">
+
+      <div class="container">
+
+        <div class="content">
+
+          <div class="content_header">
+
+            <h2 class="center">{{ page.title }}</h2>
+
+            <h4 class="center">{{ page.subtitle }}</h4>
+
+          </div>
+
+          <div class="painting_grid bigger">
+
+            {% capture this_serie %}{{page.title}}{% endcapture %}
+
+            {% for photograph in site.posts %}
+              {% if photograph.serie == this_serie %}
+
+              <div class="painting_block">
+                <a class="painting_link" href="{{ photograph.url }}" title="view: {{ photograph.title }}" >
+
+                  <img src="/assets/p/art-photographs/rokma_art_photography-{{photograph.permalink}}-880.jpeg" alt="{{ photograph.title }}">
+
+                  <div class="painting_data">
+                    <div class=" painting_title">
+                      <span class="painting_data--content">{{ photograph.title }}</span>
+                    </div>
+                  </div>
+
+                </a>
+              </div>
+              {% endif %}
+            {% endfor %}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    {% include tag_cloud.html %}
+
+    {% include footer.html %}
+
+    {% include script_ext_link.html %}
+
+    {% include script_append_to_copy_action.html %}
+
+    {% include script_google_analytics.html %}
+
+  </body>
+
+</html>

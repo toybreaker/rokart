@@ -1,0 +1,78 @@
+---
+
+---
+<!DOCTYPE html>
+<html lang="{% if page.lang %}{{page.lang}}{% else %}{{site.lang}}{% endif %}" prefix="og: http://ogp.me/ns#">
+
+  {% include head.html %}
+
+  <body class="home {{page.title}}">
+
+    {% include svg/defs.html %}
+
+    {% include header.html %}
+
+    <div class="bungkus group" role="main">
+
+      {% include hero.html %}
+
+      <div class="container home_painting_list" >
+
+        <h2 class="bottom_padded uppercase center">Recent Photographs</h2>
+
+        <div class="painting_group_list">
+
+          {% for post in site.posts %}
+            {% if post.show_in_home %}
+              {% unless post.publish %}
+              <div class="painting_link_box">
+
+                <a class="painting_link" href="{{ post.url }}">
+
+                  {% comment %}
+                  assign the page image and split at the extension dot
+                  {% endcomment %}
+
+                  {% assign f = post.image | split: '.' %}
+
+                  <img class="" src="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }}"
+                       srcset="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }} 640w,
+                               {{ f[0] | relative_url }}{{ include.name }}-880.{{ f[1] }} 880w,
+                               {{ f[0] | relative_url }}{{ include.name }}-1024.{{ f[1] }} 1024w,
+                               {{ f[0] | relative_url }}{{ include.name }}-1920.{{ f[1] }} 1920w"
+                       sizes="100vw" alt="{{ page.name }} - {{ page.subtitle }}" />
+
+                  <div class="painting_title"><strong>{{ post.title }}</strong></div>
+
+                </a>
+
+              </div>
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+
+        </div>
+
+        {% include series_grid.html %}
+
+
+      </div>
+
+
+    </div>
+
+
+
+    {% include tag_cloud.html %}
+
+    {% include footer.html %}
+
+    {% include script_ext_link.html %}
+
+    {% include script_append_to_copy_action.html %}
+
+    {% include script_google_analytics.html %}
+
+  </body>
+
+</html>
