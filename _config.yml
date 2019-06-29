@@ -4,7 +4,7 @@ subtitle: ""
 description: "Rokmas’ art photography is an uplifting, intimate meme play that evocates beauty through light and form. Sometimes abstract, absolutely non personal, mostly non descriptive. Rokma's images are permeated by a charming and unique recognisable style which took his photography artworks to international recognition."
 keywords: art photography, images for interior design, black and white, fine art, fine art prints, form, light painting, global child, photography master, Italian artist, chiaro scuro.
 lang: en
-version: 0.3.0
+version: 0.4.0
 baseurl: ""
 url: "https://art.rokma.com"
 qr: show # 'show' or 'hide' put qr.svg in includes/defs.html call it: icn--qr
@@ -24,11 +24,6 @@ company:
   youtube: #
   instagram: # https://www.instagram.com/rokmaartphotography/
   vimeo:
-  booking: #complete URL
-  airbnb: #complete URL
-  gplus: #
-  tumblr: #
-  soundcloud: #complete URL
 
 #SEO https://jekyll.github.io/jekyll-seo-tag/usage/
 #
@@ -50,7 +45,7 @@ facebook:
 logo: /assets/favicons/apple-touch-icon-152x152.png
 
 google:
-  analytics: #
+  analytics: UA-143051704-1
   verification: google32e66f1a5601ec40
 
 # Build settings
