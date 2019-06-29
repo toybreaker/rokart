@@ -30,8 +30,11 @@
 
             {% capture this_serie %}{{page.title}}{% endcapture %}
 
-            {% for photograph in site.posts %}
+            {% assign sorted_photographs = site.posts | sort: 'title' %}
+
+            {% for photograph in sorted_photographs %}
               {% if photograph.serie == this_serie %}
+
 
               <div class="painting_block">
                 <a class="painting_link" href="{{ photograph.url }}" title="view: {{ photograph.title }}" >
