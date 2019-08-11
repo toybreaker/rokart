@@ -35,7 +35,7 @@
 
                   {% assign f = post.image | split: '.' %}
 
-                  <img class="" src="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }}"
+                  <img class="painting_link_image" loading="lazy" src="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }}"
                        srcset="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }} 640w,
                                {{ f[0] | relative_url }}{{ include.name }}-880.{{ f[1] }} 880w,
                                {{ f[0] | relative_url }}{{ include.name }}-1024.{{ f[1] }} 1024w,
