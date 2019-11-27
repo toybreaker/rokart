@@ -17,10 +17,10 @@ image_align_bottom: true #true or empty
 
 ## Introduction
 
-Rokma is a designer and photographer of Slavic, Irish and Italian descent.   
+Rokma is a designer and photographer of Italian, Irish and Slavic descent.   
 His tribal affiliations are the free board sports scenes (skaters, surfers, artists).    
 A weaver.
-He maintains a research-based practice, that is articulated through modes of conceptual art making and writing of criticism, memes and prose.   
-He is interested in the story people tell themselves, perception, imagination. Cultural decolonisation. Indigenous cultural landscapes. Tribal contemporaries. 
+He maintains a research-based practice, which is articulated through modes of conceptual art making and writing of criticism, memes and prose.   
+He is interested in the story people tell themselves, perception, imagination. Cultural decolonisation. Indigenous cultural landscapes. Tribal contemporaries.
 He lives mostly in South East Asia, NZ, AU...   
 Rokma has been working with Flash art, Tomas Saraceno, Kevin Thatcher, Koo Jeong A, Adria Sartore, Tony Raka, Jean Coteau, Irene Coteau to name a few...
