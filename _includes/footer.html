@@ -132,27 +132,29 @@
         </div>
         {% endif %}
 
-        {% if site.company.facebook_page %}
-        <div class="footer_icon facebook">
-          <a class="menu_item" role="menuitem" href="{{site.company.facebook_page}}" title="{{site.company.facebook_page}} Facebook page">
-            <span>
-              {% include svg/use.html id="icn--facebook" class="facebook" %}
-            </span>
-            <span><span class="hide_on_phones">Follow {{site.short_title}} on&nbsp;</span>Facebook</span>
-          </a>
-        </div>
-        {% endif %}
-
         {% if site.company.instagram %}
         <div class="footer_icon instagram">
           <a class="menu_item" role="menuitem" href="{{site.company.instagram}}" title="{{site.company.instagram}} on Instagram">
             <span>
               {% include svg/use.html id="icn--instagram" class="instagram" %}
             </span>
-            <span><span class="hide_on_phones">Follow {{site.short_title}} on&nbsp;</span>Instagram</span>
+            <span>Instagram: {{site.company.instagram | replace: "https://www.instagram.com/", "" }}</span>
           </a>
         </div>
         {% endif %}
+
+        {% if site.company.facebook_page %}
+        <div class="footer_icon facebook">
+          <a class="menu_item" role="menuitem" href="{{site.company.facebook_page}}" title="{{site.company.facebook_page}} Facebook page">
+            <span>
+              {% include svg/use.html id="icn--facebook" class="facebook" %}
+            </span>
+            <span>Facebook: {{site.company.facebook_page | replace: "https://web.facebook.com/", "" }}</span>
+          </a>
+        </div>
+        {% endif %}
+
+
 
         {% if site.company.youtube %}
         <div class="footer_icon youtube">
