@@ -4,7 +4,7 @@ subtitle: ""
 description: "Rokma art photography is an uplifting, intimate meme play that evocates beauty through light and form. Sometimes abstract, absolutely non personal, mostly non descriptive. Rokma's images are permeated by a charming and unique recognisable style which took his photography artworks to international recognition."
 keywords: art photography, images for interior design, black and white, fine art, fine art prints, form, light painting, global child, photography master, Italian artist, chiaro scuro.
 lang: en
-version: 0.6.0
+version: 0.6.1
 baseurl: ""
 url: "https://art.rokma.com"
 qr: show # 'show' or 'hide' put qr.svg in includes/defs.html call it: icn--qr
