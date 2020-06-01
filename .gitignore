@@ -4,3 +4,4 @@ _site/
 .workinprogress
 __lab/
 node_modules/
+.DS_Store
