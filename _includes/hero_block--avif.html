@@ -1,0 +1,19 @@
+<div class="hero">
+
+  {% comment %}
+  assign the page image and split at the extension dot
+  {% endcomment %}
+  {% assign f = page.image | split: '.' %}
+
+  <img class="hero_image AVIF {% if page.image_align_bottom %}align_bottom{% endif %}" src="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }}"
+       srcset="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }} 640w,
+               {{ f[0] | relative_url }}{{ include.name }}-880.{{ f[1] }} 880w,
+               {{ f[0] | relative_url }}{{ include.name }}-1024.{{ f[1] }} 1024w,
+               {{ f[0] | relative_url }}{{ include.name }}-1920.{{ f[1] }} 1920w"
+       sizes="100vw" alt="{{ page.name }} - {{ page.subtitle }}" />
+
+  <div class="hero_caption">
+    <h1 class="">{{ site.subtitle }}</h1>
+  </div>
+
+ </div>
