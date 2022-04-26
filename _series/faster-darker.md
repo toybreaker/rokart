@@ -1,6 +1,6 @@
 ---
 layout: series
-title: Light Speed
+title: Faster Darker
 subtitle:
 description: Painting with light leads to beautiful and strong abstract work.
 publish: # notyet or blank
