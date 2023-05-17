@@ -24,19 +24,17 @@
 
           {% assign f = page.image | split: '.' %}
 
-          <img class="painting_image" src="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }}"
-               srcset="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }} 640w,
+          <img class="painting_image" src="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }}" srcset="{{ f[0] | relative_url }}{{ include.name }}-640.{{ f[1] }} 640w,
                        {{ f[0] | relative_url }}{{ include.name }}-880.{{ f[1] }} 880w,
                        {{ f[0] | relative_url }}{{ include.name }}-1024.{{ f[1] }} 1024w,
-                       {{ f[0] | relative_url }}{{ include.name }}-1920.{{ f[1] }} 1920w"
-               sizes="100vw" alt="{{ page.name }} - {{ page.subtitle }}" />
+                       {{ f[0] | relative_url }}{{ include.name }}-1920.{{ f[1] }} 1920w" sizes="100vw" alt="{{ page.name }} - {{ page.subtitle }}" />
 
         </div>
 
         <div class="painting_data painting_title">
           <span class="painting_data--name">Title</span>
           <span class="painting_data--content">{{ page.title }}</span>
-         </div>
+        </div>
 
         <div class="painting_data painting_year">
           <span class="painting_data--name">Year</span>
@@ -57,7 +55,7 @@
           <span class="painting_data--content">
             {% for tag in page.tags %}
             <a class="nowrap" href="/{{ tag }}/">{{ tag }}</a>
-          {% endfor %}
+            {% endfor %}
           </span>
         </div>
 
@@ -74,7 +72,7 @@
 
     {% include script_append_to_copy_action.html %}
 
-    {% include script_google_analytics.html %}
+    {% include script_google_gtag.html %}
 
 
   </body>

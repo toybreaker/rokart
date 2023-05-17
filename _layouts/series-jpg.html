@@ -33,23 +33,23 @@
             {% assign sorted_photographs = site.posts | sort: 'title' %}
 
             {% for photograph in sorted_photographs %}
-              {% if photograph.serie == this_serie %}
+            {% if photograph.serie == this_serie %}
 
 
-              <div class="painting_block">
-                <a class="painting_link" href="{{ photograph.url }}" title="view: {{ photograph.title }}" >
+            <div class="painting_block">
+              <a class="painting_link" href="{{ photograph.url }}" title="view: {{ photograph.title }}">
 
-                  <img class="painting_link_image" loading="lazy" src="/assets/p/art-photographs/rokma_art_photography-{{photograph.permalink}}-880.jpg" alt="{{ photograph.title }}">
+                <img class="painting_link_image" loading="lazy" src="/assets/p/art-photographs/rokma_art_photography-{{photograph.permalink}}-880.jpg" alt="{{ photograph.title }}">
 
-                  <div class="painting_data">
-                    <div class=" painting_title">
-                      <span class="painting_data--content">{{ photograph.title }}</span>
-                    </div>
+                <div class="painting_data">
+                  <div class=" painting_title">
+                    <span class="painting_data--content">{{ photograph.title }}</span>
                   </div>
+                </div>
 
-                </a>
-              </div>
-              {% endif %}
+              </a>
+            </div>
+            {% endif %}
             {% endfor %}
 
           </div>
@@ -68,7 +68,7 @@
 
     {% include script_append_to_copy_action.html %}
 
-    {% include script_google_analytics.html %}
+    {% include script_google_gtag.html %}
 
   </body>
 

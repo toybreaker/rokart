@@ -1,7 +1,7 @@
 {% if site.google.analyticsG4 %}
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google.analyticsG4 }}"></script>
-<script>
+<script defer async src="https://www.googletagmanager.com/gtag/js?id={{ site.google.analyticsG4 }}"></script>
+<script defer async>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
